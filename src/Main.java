@@ -10,6 +10,8 @@
 // ele entende que o método main SEMPRE será o primeiro a ser compilado
 
 import Animais.Cachorro;
+import Animais.Gato;
+import Animais.Passaro;
 import Encapsulamento.CachorroEncapsulado;
 
 public class Main {
@@ -45,30 +47,19 @@ public class Main {
         // Como fizemos o encapsulamento dentro de variáveis private na class, agora
         // para alterar essas variáveis é necessário utilizar os Setters
 
-        // Sem construtor
-        CachorroEncapsulado cachorro2 = new CachorroEncapsulado();
-
-        cachorro2.setNome("Dog");
-        cachorro2.setCor("Preto");
-        cachorro2.setAltura(30);
-        cachorro2.setPeso(5.2);
-        cachorro2.setTamanhoDoRabo(11);
-
-        // Com construtor
-        CachorroEncapsulado cachorro3 = new CachorroEncapsulado("Dog", "Preto", 30, 5.2, 11);
-
-        System.out.println(cachorro3.getNome()); // Dog
-
-        CachorroEncapsulado cachorro4 = new CachorroEncapsulado("Cachorro", "Preto", 30, 5.2, 11);
-
-        System.out.println(cachorro3.toString());
-        // CachorroEncapsulado [nome=Dog, cor=Preto, altura=30, peso=5.2,
-        // tamanhoDoRabo=11, estadoDeEspirito=null]
-
-        System.out.println(cachorro4.toString());
-        // CachorroEncapsulado [nome=Cachorro, cor=Preto, altura=30, peso=5.2,
-        // tamanhoDoRabo=11, estadoDeEspirito=null]
-
+        CachorroEncapsulado teste1 = new CachorroEncapsulado("null", "null", 0, 0, 0);
+        CachorroEncapsulado teste2 = new CachorroEncapsulado("null", "null", 0, 0, 0);
         System.out.println(CachorroEncapsulado.getNumeroDeCachorros()); // 2
+
+        // Herança
+
+        Gato gato1 = new Gato("Felix", "Cinza", 10);
+        Passaro passaro1 = new Passaro("PassaroNome", "Azul", 0.4);
+        CachorroEncapsulado cachorro3 = new CachorroEncapsulado("Rex", "Preto", 10, 9, 3);
+
+        cachorro3.soar();
+        gato1.soar();
+        passaro1.soar();
+
     }
 }

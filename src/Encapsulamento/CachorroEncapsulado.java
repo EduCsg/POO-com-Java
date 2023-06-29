@@ -1,32 +1,35 @@
 package Encapsulamento;
 
-public class CachorroEncapsulado {
+import Animais.Animal;
+
+public class CachorroEncapsulado extends Animal {
 
   // Atributos
   // Calcula o número de objets criados a partir dessa classe
   static int numeroDeCachorros;
 
-  private String nome;
-  private String cor;
-  private int altura;
-  private double peso;
+  // private String nome;
+  // private String cor;
+  // private int altura;
+  // private double peso;
   private int tamanhoDoRabo = 5;
 
-  private String estadoDeEspirito;
+  // private String estadoDeEspirito;
 
   // Constructors
 
   // Construtor padrão
-  public CachorroEncapsulado() {
-  }
+  // public CachorroEncapsulado() {
+  // }
 
   // Cosntrutor detalhado
   public CachorroEncapsulado(String nome, String cor, int altura, double peso, int tamanhoDoRabo) {
 
-    this.nome = nome;
-    this.cor = cor;
+    super(nome, cor, peso);
+    // this.nome = nome;
+    // this.cor = cor;
+    // this.peso = peso;
     this.altura = altura;
-    this.peso = peso;
     this.tamanhoDoRabo = tamanhoDoRabo;
 
     numeroDeCachorros++;
@@ -104,12 +107,6 @@ public class CachorroEncapsulado {
     this.tamanhoDoRabo = tamanhoDoRabo;
   }
 
-  // Methods
-  // Retorna um void
-  public void latir() {
-    System.out.println("Au au!");
-  }
-
   // Tendo os conceitos de Getter e Setter em mente, é possível criar dados
   // privados apenas dentro da classe e alterá-los por fora, utilizando o get e o
   // set
@@ -149,6 +146,11 @@ public class CachorroEncapsulado {
   public String toString() {
     return "CachorroEncapsulado [nome=" + nome + ", cor=" + cor + ", altura=" + altura + ", peso=" + peso
         + ", tamanhoDoRabo=" + tamanhoDoRabo + ", estadoDeEspirito=" + estadoDeEspirito + "]";
+  }
+
+  @Override
+  public void soar() {
+    System.out.println("Au au");
   }
 
 }
