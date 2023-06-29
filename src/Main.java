@@ -59,5 +59,16 @@ public class Main {
 
         System.out.println(cachorro3.getNome()); // Dog
 
+        CachorroEncapsulado cachorro4 = new CachorroEncapsulado("Cachorro", "Preto", 30, 5.2, 11);
+
+        System.out.println(cachorro3.toString());
+        // CachorroEncapsulado [nome=Dog, cor=Preto, altura=30, peso=5.2,
+        // tamanhoDoRabo=11, estadoDeEspirito=null]
+
+        System.out.println(cachorro4.toString());
+        // CachorroEncapsulado [nome=Cachorro, cor=Preto, altura=30, peso=5.2,
+        // tamanhoDoRabo=11, estadoDeEspirito=null]
+
+        System.out.println(CachorroEncapsulado.getNumeroDeCachorros()); // 2
     }
 }

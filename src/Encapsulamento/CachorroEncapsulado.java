@@ -3,6 +3,9 @@ package Encapsulamento;
 public class CachorroEncapsulado {
 
   // Atributos
+  // Calcula o número de objets criados a partir dessa classe
+  static int numeroDeCachorros;
+
   private String nome;
   private String cor;
   private int altura;
@@ -25,6 +28,8 @@ public class CachorroEncapsulado {
     this.altura = altura;
     this.peso = peso;
     this.tamanhoDoRabo = tamanhoDoRabo;
+
+    numeroDeCachorros++;
   }
 
   // Métodos
@@ -57,6 +62,14 @@ public class CachorroEncapsulado {
     }
 
     this.nome = nome;
+  }
+
+  public static int getNumeroDeCachorros() {
+    return numeroDeCachorros;
+  }
+
+  public static void setNumeroDeCachorros(int numeroDeCachorros) {
+    CachorroEncapsulado.numeroDeCachorros = numeroDeCachorros;
   }
 
   public String getCor() {
@@ -130,6 +143,12 @@ public class CachorroEncapsulado {
 
     return this.estadoDeEspirito;
 
+  }
+
+  @Override
+  public String toString() {
+    return "CachorroEncapsulado [nome=" + nome + ", cor=" + cor + ", altura=" + altura + ", peso=" + peso
+        + ", tamanhoDoRabo=" + tamanhoDoRabo + ", estadoDeEspirito=" + estadoDeEspirito + "]";
   }
 
 }
