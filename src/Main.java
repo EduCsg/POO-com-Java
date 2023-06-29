@@ -10,6 +10,7 @@
 // ele entende que o método main SEMPRE será o primeiro a ser compilado
 
 import Animais.Cachorro;
+import Encapsulamento.CachorroEncapsulado;
 
 public class Main {
 
@@ -26,7 +27,7 @@ public class Main {
         cachorro1.cor = "Branco";
         cachorro1.altura = 30;
         cachorro1.peso = 10.3;
-        // cachorro1.tamanhoDoRabo = 10;
+        cachorro1.tamanhoDoRabo = 10;
 
         System.out.println(cachorro1); // Animais.Cachorro@76ed6628
         // package.class @ endereço na memoria
@@ -40,6 +41,23 @@ public class Main {
         System.out.println("O cachorro esta " + cachorro1.interagir("carinho")); // O cachorro esta Feliz
         System.out.println("O cachorro esta " + cachorro1.interagir("nada")); // O cachorro esta Neutro
         System.out.println("O cachorro esta " + cachorro1.interagir("vai dormir!")); // O cachorro esta Bravo
+
+        // Como fizemos o encapsulamento dentro de variáveis private na class, agora
+        // para alterar essas variáveis é necessário utilizar os Setters
+
+        // Sem construtor
+        CachorroEncapsulado cachorro2 = new CachorroEncapsulado();
+
+        cachorro2.setNome("Dog");
+        cachorro2.setCor("Preto");
+        cachorro2.setAltura(30);
+        cachorro2.setPeso(5.2);
+        cachorro2.setTamanhoDoRabo(11);
+
+        // Com construtor
+        CachorroEncapsulado cachorro3 = new CachorroEncapsulado("Dog", "Preto", 30, 5.2, 11);
+
+        System.out.println(cachorro3.getNome()); // Dog
 
     }
 }

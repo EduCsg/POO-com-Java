@@ -25,15 +25,35 @@ public class Cachorro {
   }
 
   public String interagir(String acao) {
-    if (acao.equals("carinho")) {
-      this.estadoDeEspirito = "Feliz";
-    } else if (acao.equals("vai dormir!")) {
-      this.estadoDeEspirito = "Bravo";
-    } else {
-      this.estadoDeEspirito = "Neutro";
+
+    // if (acao.equals("carinho")) {
+    // this.estadoDeEspirito = "Feliz";
+    // } else if (acao.equals("vai dormir!")) {
+    // this.estadoDeEspirito = "Bravo";
+    // } else {
+    // this.estadoDeEspirito = "Neutro";
+    // }
+
+    // Em Java, o switch aceita apenas inteiros, Strings e enum
+    switch (acao) {
+      case "carinho":
+        this.estadoDeEspirito = "Feliz";
+        break;
+
+      case "vai dormir!":
+        this.estadoDeEspirito = "Bravo";
+        break;
+
+      case "pisar na patinha":
+        this.estadoDeEspirito = "Triste";
+        break;
+
+      default:
+        this.estadoDeEspirito = "Neutro";
+        break;
     }
 
-    return estadoDeEspirito;
+    return this.estadoDeEspirito;
   }
 
 }
