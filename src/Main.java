@@ -9,10 +9,12 @@
 // O JVM (Java Virtual Machine) é quem chama o método main()
 // ele entende que o método main SEMPRE será o primeiro a ser compilado
 
+import Animais.Animal;
 import Animais.Cachorro;
 import Animais.Gato;
 import Animais.Passaro;
 import Encapsulamento.CachorroEncapsulado;
+import Lojas.Petshop;
 
 public class Main {
 
@@ -57,9 +59,36 @@ public class Main {
         Passaro passaro1 = new Passaro("PassaroNome", "Azul", 0.4);
         CachorroEncapsulado cachorro3 = new CachorroEncapsulado("Rex", "Preto", 10, 9, 3);
 
-        cachorro3.soar();
-        gato1.soar();
-        passaro1.soar();
+        cachorro3.soar(); // Au au
+        gato1.soar(); // Miau
+        passaro1.soar(); // Piu piu
+
+        Petshop petshop = new Petshop();
+
+        // petshop.darBanho(passaro1);
+        // System.out.println(passaro1.getEstadoDeEspirito()); // Limpo!
+
+        // petshop.deixarNoHotal(gato1);
+        // System.out.println(gato1.getEstadoDeEspirito()); // Com saudade!
+
+        // // petshop.tosar(passaro1); ==> ERRO
+        // petshop.tosar(cachorro3);
+        // System.out.println(cachorro3.getEstadoDeEspirito()); // Tosado!
+
+        //
+
+        // Todo obj gato é um animal, mas nem todo animal é um gato
+
+        // Podemos referenciar uma classe Animal, porém não podemos mais instanciar um
+        // objeto nela, pois é uma classe abstrata
+
+        // Gato gato2 = new Gato("Felix", "Preto", 4.5); ==> OK
+        // Animal gato3 = new Gato("Felix", "Preto", 4.5); ==> OK
+
+        // Animal gato5 = new Animal("Felix", "Preto", 4.5); Se animal abstrato == ERRO
+
+        // Gato gato4 = new Animal("Felix", "Preto", 4.5); ==> ERRO, pois
+        // o java não consegue saber se a classe original é animal ou gato
 
     }
 }
